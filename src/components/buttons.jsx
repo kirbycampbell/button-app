@@ -7,9 +7,7 @@ class Buttons extends Component {
 
     return (
       <div>
-        {buttons.map(button => (
-          <Button key={button.id} onIncrement={onIncrement} button={button} />
-        ))}
+        <Button onIncrement={onIncrement} />
       </div>
     );
   }

@@ -5,13 +5,20 @@ class Button extends Component {
     return (
       <div className="col-1">
         <button
-          onClick={() => this.props.onIncrement()}
-          className="btn btn-secondary btn-sm"
+          onClick={() => this.props.onIncrement(this.props.val)}
+          className={this.getButtonColor()}
         >
           Press Me
         </button>
       </div>
     );
+  }
+
+  getButtonColor() {
+    let classes = "btn btn-secondary btn-sm ";
+    console.log(this.props.val);
+    if (this.props.val / 1 === 1) classes += "badge-primary";
+    return classes;
   }
 }
 

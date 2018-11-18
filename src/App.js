@@ -6,19 +6,22 @@ class App extends Component {
   state = {
     val: 0
   };
+
   constructor(props) {
     super(props);
   }
-  handleIncrement = value => {
-    value++;
-    console.log({ value });
+
+  handleIncrement = () => {
+    const value = this.state;
+    value.val++;
+    this.setState({ value });
+    console.log(value);
   };
 
   render() {
-    const something = 0;
     return (
       <div className="container">
-        <Buttons onIncrement={this.handleIncrement(something)} />
+        <Buttons onIncrement={this.handleIncrement} />
       </div>
     );
   }
