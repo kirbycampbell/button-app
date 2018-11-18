@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 
 class Button extends Component {
-  state = {};
   render() {
-    return <button className="col-1">Press Me</button>;
+    return (
+      <div className="col-1">
+        <button
+          onClick={() => this.props.onIncrement()}
+          className="btn btn-secondary btn-sm"
+        >
+          Press Me
+        </button>
+      </div>
+    );
   }
 }
 
