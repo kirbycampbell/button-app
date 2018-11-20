@@ -3,11 +3,11 @@ import Button from "./button";
 
 class Buttons extends Component {
   render() {
-    const { onIncrement } = this.props;
+    const { onIncrement, classAssign } = this.props;
 
     return (
       <div>
-        <Button onIncrement={onIncrement} />
+        <Button onIncrement={onIncrement} classAssign={classAssign} />
       </div>
     );
   }

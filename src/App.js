@@ -11,17 +11,35 @@ class App extends Component {
     super(props);
   }
 
-  handleIncrement = () => {
+  handleIncrement = props => {
     const value = this.state;
     value.val++;
     this.setState({ value });
-    console.log(value);
+    //console.log(value.val);
+  };
+
+  classAssign = props => {
+    let classes = "btn btn-secondary btn-sm ";
+    if (this.state.val / 1 === 1) {
+      classes += "badge-primary";
+    } else if (this.state.val / 2 === 1) {
+      classes += "badge-success";
+    } else if (this.state.val / 3 === 1) {
+      classes += "badge-danger";
+    } else if (this.state.val / 4 === 1) {
+      classes += "badge-warning";
+    }
+    console.log(this.state.val);
+    return classes;
   };
 
   render() {
     return (
       <div className="container">
-        <Buttons onIncrement={this.handleIncrement} />
+        <Buttons
+          onIncrement={this.handleIncrement}
+          classAssign={this.classAssign}
+        />
       </div>
     );
   }
